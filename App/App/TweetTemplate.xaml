@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentView x:Class="Forms.TweetTemplate"
+             xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:models="clr-namespace:Tweetinvi.Models;assembly=Tweetinvi.Core"
+             x:DataType="models:ITweet"
+             mc:Ignorable="d">
+    <Grid x:Name="Container" ColumnSpacing="0">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="4*" />
+        </Grid.ColumnDefinitions>
+
+        <!--  NOMBRE DEL USUARIO  -->
+        <Label IsVisible="False" Text="{Binding CreatedBy}" />
+
+        <Frame x:Name="UserProfileImageContainer"
+               Padding="0"
+               BackgroundColor="Black"
+               BorderColor="Black"
+               HorizontalOptions="Center"
+               SizeChanged="UserProfileImageContainer_OnSizeChanged"
+               VerticalOptions="Start">
+            <Image Aspect="AspectFill" Source="{Binding CreatedBy.ProfileImageUrlHttps}" />
+        </Frame>
+
+
+        <Label Grid.Column="1"
+               Margin="0,0,0,12"
+               Text="{Binding Text}"
+               TextColor="Black" />
+        <BoxView Grid.Column="0"
+                 Grid.ColumnSpan="2"
+                 HeightRequest="1"
+                 Opacity="0.25"
+                 VerticalOptions="End"
+                 Color="SlateGray" />
+    </Grid>
+</ContentView>

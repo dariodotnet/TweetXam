@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<ContentPage x:Class="Forms.MainPage"
+<ContentPage x:Class="Forms.TweetDetail"
              xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
@@ -7,10 +7,8 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:models="clr-namespace:Tweetinvi.Models;assembly=Tweetinvi.Core"
              mc:Ignorable="d">
-
-    <CollectionView x:Name="TimeLine"
+    <!--<CollectionView x:Name="TimeLine"
                     BackgroundColor="White"
-                    SelectionChanged="TimeLine_OnSelectionChanged"
                     SelectionMode="Single">
         <CollectionView.ItemTemplate>
             <DataTemplate x:DataType="models:ITweet">
@@ -20,6 +18,6 @@
         <CollectionView.ItemsLayout>
             <LinearItemsLayout ItemSpacing="12" Orientation="Vertical" />
         </CollectionView.ItemsLayout>
-    </CollectionView>
-
+    </CollectionView>-->
+    <forms:TweetTemplate x:Name="Detail" />
 </ContentPage>
